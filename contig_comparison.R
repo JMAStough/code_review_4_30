@@ -1,11 +1,11 @@
 library(tidyverse)
 
-spades_vlp <- read_tsv("spades_vlp_contig_qc.tsv")
-spades_whole <- read_tsv("spades_whole_contig_qc.tsv")
-megahit_vlp <- read_tsv("megahit_vlp_contig_qc.tsv")
-megahit_whole <- read_tsv("megahit_whole_contig_qc.tsv")
-megahit_coassembly_vlp <- read_tsv("megahit_coassembly_vlp_contig_qc.tsv")
-megahit_coassembly_whole <- read_tsv("megahit_coassembly_whole_contig_qc.tsv")
+spades_vlp <- read_tsv("data/spades_vlp_contig_qc.tsv")
+spades_whole <- read_tsv("data/spades_whole_contig_qc.tsv")
+megahit_vlp <- read_tsv("data/megahit_vlp_contig_qc.tsv")
+megahit_whole <- read_tsv("data/megahit_whole_contig_qc.tsv")
+megahit_coassembly_vlp <- read_tsv("data/megahit_coassembly_vlp_contig_qc.tsv")
+megahit_coassembly_whole <- read_tsv("data/megahit_coassembly_whole_contig_qc.tsv")
 
 contigqc <- bind_rows("spades_vlp" = spades_vlp, "spades_whole" = spades_whole, "megahit_vlp" = megahit_vlp, "megahit_whole" = megahit_whole,
                         "megahit_coassembly_vlp" = megahit_coassembly_vlp, "megahit_coassembly_whole" = megahit_coassembly_whole, .id="id")
